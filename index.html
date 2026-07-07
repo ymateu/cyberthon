@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccessGuard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container py-4 py-md-5">
+
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h1 class="display-6 fw-bold" style="color: #0b1a33;">
+          <i class="bi bi-shield-lock-fill me-2" style="color: #1f4b8a;"></i>AccessGuard
+        </h1>
+        <p class="text-muted-light">Princípio do Menor Privilégio</p>
+      </div>
+    </div>
+
+    <div class="row g-3 g-md-4 mb-4">
+      <div class="col-6 col-md-3">
+        <div class="card p-3 h-100">
+          <div class="d-flex align-items-center">
+            <div class="icon-circle me-3"><i class="bi bi-person-badge fs-4"></i></div>
+            <div><span class="text-muted-light d-block" style="font-size:0.8rem;">Funções</span><span class="fw-bold fs-5">3</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card p-3 h-100">
+          <div class="d-flex align-items-center">
+            <div class="icon-circle me-3"><i class="bi bi-key fs-4"></i></div>
+            <div><span class="text-muted-light d-block" style="font-size:0.8rem;">Permissões</span><span class="fw-bold fs-5">12</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card p-3 h-100">
+          <div class="d-flex align-items-center">
+            <div class="icon-circle me-3" style="background: #fee8e8;"><i class="bi bi-exclamation-triangle-fill" style="color:#b33636;"></i></div>
+            <div><span class="text-muted-light d-block" style="font-size:0.8rem;">Alertas</span><span class="fw-bold fs-5 text-danger">1</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card p-3 h-100 d-flex flex-row align-items-center justify-content-between">
+          <div>
+            <span class="text-muted-light d-block" style="font-size:0.8rem;">Pontuação</span>
+            <span class="fw-bold fs-4" style="color: #1a7a4a;">92%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 g-md-4 mb-4">
+      <div class="col-lg-6">
+        <div class="card p-3 p-md-4 h-100">
+          <h5 class="fw-bold mb-3"><i class="bi bi-magic me-2" style="color:#1f4b8a;"></i>Gerador Inteligente de Acessos</h5>
+          <p class="text-muted-light" style="font-size:0.95rem;">Descreva sua organização e nossa IA irá sugerir funções, permissões e riscos.</p>
+          <div class="bg-soft-primary p-3 rounded-4 mb-3">
+            <p class="mb-0 fw-500" style="font-size:0.95rem;"><i class="bi bi-building me-2"></i> “Temos alunos, professores e coordenadores. Professores podem lançar notas e fazer chamadas. Alunos apenas consultam notas e frequência. Coordenadores podem gerenciar professores e visualizar relatórios.”</p>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-primary-custom btn-sm" id="regenerateBtn"><i class="bi bi-arrow-repeat me-1"></i>Gerar estrutura</button>
+            <button class="btn btn-outline-primary-custom btn-sm"><i class="bi bi-plus-circle"></i> Novo cenário</button>
+          </div>
+          <hr class="my-3">
+          <div class="d-flex flex-wrap gap-2 gap-md-3">
+            <span class="permission-badge"><i class="bi bi-check-circle-fill me-1 text-success"></i> Funções criadas: 3</span>
+            <span class="permission-badge"><i class="bi bi-list-check me-1"></i> Permissões: 12</span>
+            <span class="permission-badge danger"><i class="bi bi-exclamation-circle me-1"></i> Alertas: 1</span>
+            <span class="permission-badge success"><i class="bi bi-shield-check"></i> Segurança 92%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card p-3 p-md-4 h-100">
+          <h5 class="fw-bold mb-3"><i class="bi bi-diagram-3 me-2" style="color:#1f4b8a;"></i>Funções e Permissões</h5>
+          <ul class="list-group">
+            <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center border-bottom-light">
+              <span><i class="bi bi-person me-2"></i><strong>Aluno</strong> <span class="text-muted-light ms-1" style="font-size:0.8rem;">acesso básico</span></span>
+              <span class="d-flex flex-wrap gap-1 mt-1 mt-sm-0">
+                <span class="permission-badge">Ver notas</span>
+                <span class="permission-badge">Ver frequência</span>
+                <span class="permission-badge danger">Excluir dados</span>
+              </span>
+            </li>
+            <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center border-bottom-light">
+              <span><i class="bi bi-person-video2 me-2"></i><strong>Professor</strong> <span class="text-muted-light ms-1" style="font-size:0.8rem;">lança notas, gerencia turmas</span></span>
+              <span class="d-flex flex-wrap gap-1 mt-1 mt-sm-0">
+                <span class="permission-badge">Ver notas</span>
+                <span class="permission-badge">Ver frequência</span>
+                <span class="permission-badge">Excluir dados</span>
+              </span>
+            </li>
+            <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center">
+              <span><i class="bi bi-person-gear me-2"></i><strong>Coordenador</strong> <span class="text-muted-light ms-1" style="font-size:0.8rem;">adm limitado</span></span>
+              <span class="d-flex flex-wrap gap-1 mt-1 mt-sm-0">
+                <span class="permission-badge">Ver relatórios</span>
+                <span class="permission-badge">Gerenciar professores</span>
+                <span class="permission-badge">Fazer chamada</span>
+                <span class="permission-badge danger">Excluir dados</span>
+              </span>
+            </li>
+          </ul>
+          <div class="mt-3">
+            <span class="badge bg-light text-dark border px-3 py-2 d-inline-flex flex-wrap"><i class="bi bi-robot me-1"></i> IA detectou permissão excessiva: <span class="text-danger fw-500 ms-1">"Excluir dados"</span> para Aluno</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 g-md-4 mb-4">
+      <div class="col-md-6">
+        <div class="card p-3 p-md-4 alert-card">
+          <div class="d-flex align-items-start gap-3">
+            <div><i class="bi bi-bell-fill text-danger fs-4"></i></div>
+            <div>
+              <h6 class="fw-bold mb-1"><span class="text-danger">ALERTA ENCONTRADO</span> · 1 permissão excessiva</h6>
+              <p class="text-muted-light mb-1" style="font-size:0.95rem;"><strong>Problema:</strong> A função Aluno possui permissão para <span class="fw-bold text-danger">Excluir dados</span>. Viola o princípio do menor privilégio.</p>
+              <p class="text-muted-light mb-2" style="font-size:0.9rem;"><i class="bi bi-pencil-square me-1"></i> Sugestão: Remover permissão “Excluir dados” da função Aluno.</p>
+              <button class="btn btn-sm btn-outline-danger-custom"><i class="bi bi-check2-circle me-1"></i>Aplicar correção</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-3 p-md-4 attack-sim">
+          <div class="d-flex align-items-start gap-3">
+            <div><i class="bi bi-bug-fill fs-4" style="color:#b97c2b;"></i></div>
+            <div>
+              <h6 class="fw-bold mb-1"><i class="bi bi-shield-exclamation me-1"></i> Resultado da Simulação</h6>
+              <p class="text-danger fw-500 mb-1"><i class="bi bi-x-circle-fill me-1"></i> ACESSO PERMITIDO (RISCO!)</p>
+              <p class="text-muted-light mb-1" style="font-size:0.95rem;">O usuário <strong>Aluno</strong> conseguiu executar a ação <strong>"Excluir dados"</strong>. Isso representa um risco de segurança.</p>
+              <p class="text-muted-light mb-2" style="font-size:0.9rem;"><i class="bi bi-lightbulb me-1"></i> Como corrigir: Revise permissões da função Aluno e remova acessos desnecessários.</p>
+              <button class="btn btn-sm btn-outline-primary-custom"><i class="bi bi-arrow-right-circle me-1"></i>Ir para correções</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card p-3 p-md-4 mt-4 bg-white">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+        <div>
+          <h6 class="fw-bold mb-0"><i class="bi bi-shield-plus me-2"></i>Simular Ataque</h6>
+          <p class="text-muted-light" style="font-size:0.9rem;">Teste se um usuário consegue acessar recursos que não deveria.</p>
+        </div>
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          <select class="form-select form-select-sm w-auto" id="userSelect" style="border-radius:40px;background:#f4f7fc;border:1px solid #dce3ef;">
+            <option value="Aluno" selected>Aluno</option>
+            <option value="Professor">Professor</option>
+            <option value="Coordenador">Coordenador</option>
+          </select>
+          <select class="form-select form-select-sm w-auto" id="actionSelect" style="border-radius:40px;background:#f4f7fc;border:1px solid #dce3ef;">
+            <option value="Excluir dados">Excluir dados</option>
+            <option value="Editar notas">Editar notas</option>
+            <option value="Ver relatórios">Ver relatórios</option>
+          </select>
+          <button class="btn btn-primary-custom btn-sm" id="simulateBtn"><i class="bi bi-play-fill me-1"></i>Executar</button>
+        </div>
+      </div>
+      <div id="simulationFeedback" class="mt-3 p-3 rounded-4" style="background: #f8faff; border:1px solid #e5ecf5;">
+        <span class="text-muted-light"><i class="bi bi-info-circle me-1"></i> Clique em "Executar" para simular o ataque.</span>
+      </div>
+    </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
